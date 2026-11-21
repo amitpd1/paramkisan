@@ -38,8 +38,8 @@ Tips: keep each image under about 500 KB. File names are case-sensitive on GitHu
 | Byadagi Chilli Powder 100g | B0H835DXRZ | https://www.amazon.in/dp/B0H835DXRZ |
 | Turmeric, Chilli & Jaggery Trio 690g | B0H83FZLZC | https://www.amazon.in/dp/B0H83FZLZC |
 | Chilli & Jaggery Combo 590g | B0H83NJCS3 | https://www.amazon.in/dp/B0H83NJCS3 |
-| Turmeric & Jaggery Combo 590g | B0H832GR81 | https://www.amazon.in/dp/B0H832GR81 |
-| Turmeric & Byadagi Chilli Combo 200g | B0H82QJDDH | https://www.amazon.in/dp/B0H82QJDDH |
+| Turmeric & Jaggery Combo 590g | B0H886CYKM | https://www.amazon.in/dp/B0H886CYKM |
+| Turmeric & Byadagi Chilli Combo 200g | B0H87YS9HS | https://www.amazon.in/dp/B0H87YS9HS |
 
 If a listing changes, update the link in **all** of these places: the buttons in `index.html`, the JSON-LD block near the top of `index.html`, and `llms.txt`.
 
