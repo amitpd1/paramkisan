@@ -118,7 +118,7 @@ img{display:block;max-width:100%}
 /* Hero */
 .hero{position:relative;background:var(--green);color:var(--cream);padding:88px 0 120px;overflow:hidden;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 1px,transparent 1px 26px),radial-gradient(rgba(245,234,214,.12) 1px,transparent 1.2px);background-size:auto,22px 22px}
 .hero::before{content:"";position:absolute;top:-220px;right:-200px;width:620px;height:620px;border-radius:50%;background:radial-gradient(closest-side,rgba(242,188,60,.25),transparent);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;position:relative}
+.hero-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start;position:relative}
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:56px}}
 .hero .eyebrow{color:var(--yellow)}
 .hero h1{font-size:clamp(44px,5.4vw,78px);margin:24px 0 24px;color:var(--cream);line-height:.95}
@@ -130,9 +130,11 @@ img{display:block;max-width:100%}
 .hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:48px;padding-top:28px;border-top:1px solid rgba(245,234,214,.25);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cream)}
 .hero-meta span{display:flex;align-items:center;gap:10px}
 .hero-meta span::before{content:"";width:8px;height:8px;background:var(--yellow)}
-.hero-visual{position:relative;padding:0 24px 24px 0;width:100%;max-width:600px;justify-self:end}
+.hero-visual{position:relative;padding:0 24px 24px 0;width:90%;justify-self:end}
 .hero-frame{position:relative;border-radius:240px 240px 28px 28px;overflow:hidden;aspect-ratio:1.1/1;background:linear-gradient(160deg,#3A2A1A,#1B1A14);border:3px solid var(--cream);box-shadow:22px 22px 0 var(--red)}
-.hero-frame img{width:100%;height:100%;object-fit:cover}
+.hero-frame::before{content:"";position:absolute;inset:-40px;background:url("assets/triple-combo.jpg") center/cover;filter:blur(18px) brightness(.75)}
+.hero-frame img{position:relative;width:100%;height:100%;object-fit:contain;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.hero-frame:hover img{transform:scale(1.06)}
 .hero-badge{position:absolute;left:-18px;bottom:44px;background:var(--cream-l);color:var(--ink);border-radius:16px;padding:16px 22px;box-shadow:8px 8px 0 var(--yellow);display:flex;gap:14px;align-items:center;transition:transform .3s,box-shadow .3s}
 .hero-badge .dot{width:46px;height:46px;border-radius:50%;background:var(--white);object-fit:contain;padding:4px;box-shadow:0 0 0 1px var(--line)}
 .hero-badge b{display:block;font-family:'Bodoni Moda',serif;font-size:20px;font-weight:800;line-height:1.1}
@@ -153,7 +155,7 @@ a.hero-badge:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--y
 @media(max-width:960px){.cards{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
 .card{background:var(--cream-l);border:2px solid var(--green);border-radius:var(--radius);overflow:hidden;box-shadow:12px 12px 0 var(--green);display:flex;flex-direction:column;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
 .card:hover{transform:translate(-4px,-4px);box-shadow:16px 16px 0 var(--red)}
-.card-img{aspect-ratio:1/1;background:var(--cream);overflow:hidden;position:relative;margin:14px 14px 0;border-radius:999px 999px 14px 14px;border:2px solid var(--green)}
+.card-img{aspect-ratio:5/4;background:var(--cream);overflow:hidden;position:relative;margin:14px 14px 0;border-radius:999px 999px 14px 14px;border:2px solid var(--green)}
 .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .card:hover .card-img img{transform:scale(1.05)}
 .tag{position:absolute;top:18px;left:50%;transform:translateX(-50%);background:var(--yellow);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:7px 14px;border-radius:999px;color:var(--ink);white-space:nowrap}
@@ -161,9 +163,7 @@ a.hero-badge:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--y
 .card-body h3{font-size:28px;margin-bottom:10px;color:var(--green)}
 .card-body p{color:var(--ink-2);font-size:15px;margin-bottom:20px}
 .card-body .btn{margin-top:auto}
-.feature-list{list-style:none;display:grid;gap:8px;margin-bottom:24px;font-size:14px;color:var(--ink-2);font-weight:500}
-.feature-list li{display:flex;gap:10px}
-.feature-list li::before{content:"";flex:none;width:9px;height:9px;margin-top:7px;background:var(--red)}
+.feature-list{list-style:none;display:grid;gap:6px;margin-bottom:22px;font-size:14px;color:var(--ink-2);font-weight:500}
 
 /* Combos (red band) */
 .dark{background-color:var(--red);color:var(--cream);background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 1px,transparent 1px 26px),radial-gradient(rgba(245,234,214,.14) 1px,transparent 1.2px);background-size:auto,22px 22px}
@@ -186,7 +186,7 @@ a.hero-badge:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--y
 .combo.featured .combo-body h3{font-size:36px;font-style:italic;color:var(--yellow)}
 .combo.featured .combo-body p{color:#D9E4DC;font-size:16px}
 @media(max-width:620px){.combo.featured{grid-template-columns:1fr}}
-.combo.featured .combo-img{min-height:340px}
+.combo.featured .combo-img{min-height:440px}
 .pill-gold{display:inline-block;background:var(--cream);color:var(--red);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:7px 14px;border-radius:999px;margin-bottom:16px;align-self:flex-start}
 
 /* Why */
@@ -344,46 +344,34 @@ footer{background:var(--green-d);color:var(--cream);padding:88px 0 120px;margin-
     <div class="cards">
       <article class="card reveal">
         <div class="card-img">
-          <img src="assets/jaggery-cubes.jpg" alt="ParamKisan Natural Jaggery Cubes" />
+          <img src="assets_amit/jaggery_front_edited.jpg" alt="ParamKisan Natural Jaggery Cubes" />
           <span class="tag">Jaggery</span>
         </div>
         <div class="card-body">
           <h3>Natural Jaggery Cubes</h3>
           <p>Slow-boiled cane jaggery with a deep, caramel-golden aroma.</p>
-          <ul class="feature-list">
-            <li>Made from sugarcane, no bleaching</li>
-            <li>Ideal for chai, payasam and sweets</li>
-          </ul>
           <a href="https://www.amazon.in/dp/B0H837MKY8" target="_blank" rel="noopener" class="btn btn-primary btn-block">Buy on Amazon <span class="arrow">→</span></a>
         </div>
       </article>
       <article class="card reveal">
         <div class="card-img">
-          <img src="assets/turmeric-powder.jpg" alt="ParamKisan Natural Turmeric Powder" />
+          <img src="assets_amit/turmeric_front_edited.jpeg" alt="ParamKisan Natural Turmeric Powder" />
           <span class="tag">Turmeric</span>
         </div>
         <div class="card-body">
           <h3>Natural Turmeric Powder</h3>
           <p>Vibrant, aromatic haldi for daily cooking and wellness routines.</p>
-          <ul class="feature-list">
-            <li>Stone-ground, no added colour</li>
-            <li>Rich golden hue and earthy aroma</li>
-          </ul>
           <a href="https://www.amazon.in/dp/B0H82ZDRBS" target="_blank" rel="noopener" class="btn btn-primary btn-block">Buy on Amazon <span class="arrow">→</span></a>
         </div>
       </article>
       <article class="card reveal">
         <div class="card-img">
-          <img src="assets/byadagi-chilli.jpg" alt="ParamKisan Byadagi Chilli Powder" />
+          <img src="assets_amit/Chilli_front_edited.jpeg" alt="ParamKisan Byadagi Chilli Powder" />
           <span class="tag">Byadagi</span>
         </div>
         <div class="card-body">
           <h3>Byadagi Chilli Powder</h3>
           <p>Brilliant red colour with a gentle, fragrant heat.</p>
-          <ul class="feature-list">
-            <li>Authentic regional Byadagi variety</li>
-            <li>Perfect for curries, rasam and pickles</li>
-          </ul>
           <a href="https://www.amazon.in/dp/B0H835DXRZ" target="_blank" rel="noopener" class="btn btn-primary btn-block">Buy on Amazon <span class="arrow">→</span></a>
         </div>
       </article>
